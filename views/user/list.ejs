@@ -1,0 +1,92 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %>
+
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>	
+<div style="overflow:auto;">
+	
+		<table class="table table-striped table-hover" id="myTable">
+		<thead>
+			<tr>
+				
+				<th>Name</th>
+				<th>Designation</th>
+				<th>Email</th>
+				<th>Mobile</th>	
+				<th>Reporting</th>
+				<th>Designation</th>
+				<th>Location</th>
+				<th>Project</th>	
+				<th>Working1</th>
+				<th>Working2</th>
+				<th>Working3</th>
+				<th>Good1</th>	
+				<th>Good2</th>
+				<th>Good3</th>
+				<th>Excellent1</th>
+				<th>Excellent2</th>	
+				<th>Excellent3</th>
+				<th>Remarks</th>
+				<th>Status</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody >
+		
+			<% if (data) { %>
+				<% data.forEach(function(user){ %>
+					<tr class="item">
+						
+						<td ><%= user.Contact_Name %></td>
+						<td><%= user.Contact_Designation %></td>
+						<td><%= user.Contact_Email %></td>
+						<td><%= user.Contact_Mobile %></td>
+						<td><%= user.Contact_Mobile %></td>
+						<td><%= user.Contact_Reporting %></td>
+						<td><%= user.Contact_Location %></td>
+						<td><%= user.Contact_Project %></td>
+						<td><%= user.Contact_Working1 %></td>
+						<td><%= user.Contact_Working2 %></td>
+						<td><%= user.Contact_Working3 %></td>
+						<td><%= user.Contact_Good1 %></td>
+						<td><%= user.Contact_Good2 %></td>
+						<td><%= user.Contact_Good3 %></td>
+						<td><%= user.Contact_Excellent1 %></td>
+						<td><%= user.Contact_Excellent2 %></td>
+						<td><%= user.Contact_Excellent3 %></td>
+						<td><%= user.Contact_Remarks %></td>
+						<td><%= user.Contact_Status %></td>
+						<td> 
+							<a href='/users/edit/<%= user.Contact_ID %>'  style="height: 9px; color:#FFC107" class="btn" data-toggle="modal"><i class="material-icons" >edit</i></a>	 &nbsp;			
+						</td>
+						<td>
+							
+							<form method="post" action="/users/delete/<%= user.Contact_ID %>" style="padding-top: -10px;">
+							<button class="btn" type="submit" data-toggle="modal" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" style="background-color: transparent; width: 45px; height: 32px;">
+									<i class="material-icons" data-toggle="tooltip" title="Delete" style="margin-top: 5px;margin-left: -30px;color:#F44336">&#xE872;</i>
+							</button>
+							<input type="hidden" name="_method" value="DELETE" />
+						
+						</form>
+					</td>
+					</tr>
+				<% }) %>
+				<% } %>
+		</tbody>
+	</table>
+
+
+</div>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>

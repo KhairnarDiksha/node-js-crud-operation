@@ -1,0 +1,92 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %>	
+
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>
+	
+ <form action="/users/add" method="post" name="form1">
+	
+	<table width="90%" border="0" style="font-size: 13px;">
+		<div class="modal-header">						
+			<h4 class="modal-title">Add Customer</h4>
+		</div>
+		<br/>
+		
+		<tr class="form-group"> 
+				<td style="padding-left: 40px; width: 18%">Name</td>
+				<td style="padding-right: 50px;padding-bottom: 10px; width:35%"><input type="text" class="form-control" name="Contact_Name" id="Contact_Name" value="<%= Contact_Name %>"  /></td>
+				<td >Designation</td>
+				<td><input type="text" class="form-control" name="Contact_Designation" id="Contact_Designation" value="<%= Contact_Designation %>" /></td>
+			
+			</tr>
+			<tr class="form-group"> 
+					<td style="padding-left: 40px; width: 18%">Email</td>
+					<td  style="padding-right: 50px ;padding-bottom: 10px;"><input type="text" class="form-control" name="Contact_Email" id="Contact_Email" value="<%= Contact_Email %>" /></td>
+					<td>Mobile</td>
+					<td><input type="text" class="form-control" name="Contact_Mobile" id="Contact_Mobile" value="<%= Contact_Mobile %>" /></td>
+				
+			</tr>
+			<tr class="form-group"> 
+					<td style="padding-left: 40px; width: 18%"> Reporting</td>
+					<td  style="padding-right: 50px;padding-bottom: 10px;"><input type="text" class="form-control" name="Contact_Reporting" id="Contact_Reporting" value="<%= Contact_Reporting %>" /></td>
+					<td>Location</td>
+					<td><input type="text" class="form-control" name="Contact_Location" id="Contact_Location" value="<%= Contact_Location %>" /></td>
+				
+			</tr>
+			<tr class="form-group"> 
+					<td style="padding-left: 40px; width: 18%">Project</td>
+					<td  style="padding-right: 50px;padding-bottom: 10px;"><input type="text" class="form-control" name="Contact_Project" id="Contact_Project" value="<%= Contact_Project %>" /></td>
+					<td>Contact Working1</td>
+					<td><input type="text" class="form-control" name="Contact_Working1" id="Contact_Working1" value="<%= Contact_Working1 %>" /></td>
+				
+			</tr>
+			<tr class="form-group"> 
+					<td style="padding-left: 40px; width: 18%">Contact Working2</td>
+					<td  style="padding-right: 50px;padding-bottom: 10px;"><input type="text" class="form-control" name="Contact_Working2" id="Contact_Working2" value="<%= Contact_Working2 %>" /></td>
+					<td>Contact Working3</td>
+					<td><input type="text" class="form-control" name="Contact_Working3" id="Contact_Working3" value="<%= Contact_Working3 %>" /></td>
+				
+			</tr>
+			<tr class="form-group"> 
+					<td style="padding-left: 40px; width: 10%">Contact Good1</td>
+					<td  style="padding-right: 50px;padding-bottom: 10px;"> <input type="text" class="form-control" name="Contact_Good1" id="Contact_Good1" value="<%= Contact_Good1 %>" /></td>
+					<td>Contact Good2</td>
+					<td><input type="text" class="form-control" name="Contact_Good2" id="Contact_Good2" value="<%= Contact_Good2 %>" /></td>
+				
+			</tr>
+			<tr class="form-group"> 
+					<td style="padding-left: 40px; width: 10%">Contact Good3</td>
+					<td  style="padding-right: 50px;padding-bottom: 10px;"><input type="text" class="form-control" name="Contact_Good3" id="Contact_Good3" value="<%= Contact_Good3 %>" /></td>
+					<td>Contact Excellent1</td>
+					<td><input type="text" class="form-control" name="Contact_Excellent1" id="Contact_Excellent1" value="<%= Contact_Excellent1 %>" /></td>
+				
+			</tr>
+			<tr class="form-group"> 
+					<td style="padding-left: 40px; width: 10%">Contact Excellent2</td>
+					<td style="padding-right: 50px;padding-bottom: 10px;"><input type="text" class="form-control" name="Contact_Excellent2" id="Contact_Excellent2" value="<%= Contact_Excellent2 %>" /></td>
+					<td>Contact Excellent3</td>
+					<td><input type="text" class="form-control" name="Contact_Excellent3" id="Contact_Excellent3" value="<%= Contact_Excellent3 %>" /></td>
+				
+			</tr>
+			<tr class="form-group"> 
+					<td style="padding-left: 40px; width: 10%">Remarks</td>
+					<td style="padding-right: 50px;padding-bottom: 10px; "><input type="text" class="form-control" name="Contact_Remarks" id="Contact_Remarks" value="<%= Contact_Remarks %>" /></td>
+					
+					<td><input type="submit" class="btn btn-success" name="Submit" value="Save" /></td>
+			</tr>
+			
+		
+
+	</table>
+</form> 
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>
